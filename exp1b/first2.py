@@ -10,13 +10,14 @@
 #     print("\n")
 
 row = 5
-c=1
-for i in range(1,row+1):
-    if(i%2==0):
-        for k in range(2,(i*2)+1,2):
+
+for i in range(1, row + 1):
+    if i % 2 == 0:
+        # Even row: print even numbers
+        for k in range(2, (i * 2) + 1, 2):
             print(k, end=" ")
     else:
-        for k in range(1,i+c,2):
+        # Odd row: print odd numbers
+        for k in range(1, (i * 2), 2):
             print(k, end=" ")
-            c=c+2
     print("\n")
