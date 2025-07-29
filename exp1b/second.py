@@ -1,8 +1,17 @@
 #A program to find frequency of each digit in a given integer.
 
-num = input("enter the number ")
-for i in range(0, 9):
-    for k in range(0,(len(num)-1)):
-        if(int(num[k])==i):
-            print(f"The count of {i} is {num.count(num[k])}")
+def count_digit(n):
+  d={}
+  while(n>0):
+    digit=n%10
+    for i in range(0,10):
+      if(digit==i):
+        if(digit in d.keys()):
+          d[digit]=d[digit]+1
+        else:
+          d[digit]=1
+    n=n//10
+  print(d)
+n=int(input("enter the number "))
+count_digit(n)
         
