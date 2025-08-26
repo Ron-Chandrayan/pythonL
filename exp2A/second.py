@@ -1,19 +1,34 @@
-class bank:
-    def __init__(self):
-        self.accno="XXXXXX"
-        self.balance=100000
+#Create a fraction class to implement operator overloading for adding subtracting and multiplying two fractions
 
-    def deposit(self,amt):
-        self.balance=self.balance+amt
-        print("bank balance after deposit ",self.balance)
+class fraction:
+    def __init__(self,numerator,denominator):
+        if denominator==0:
+            raise ValueError("denominator cannot be zero")
+        self.numerator=numerator
+        self.denominator=denominator
     
-    def withdraw(self,amt):
-        if(self.balance>amt):
-            self.balance=self.balance-amt
-            print("balance after withdraw ",self.balance)
-        else:
-            print("You are broke buddy ")
+    def __add__(self,other):
+        num = (self.numerator*other.denominator)+(other.numerator*self.denominator)
+        dem = (self.denominator)*(other.denominator)
+        return fraction(num,dem)
+    
+    def __sub__(self,other):
+        num = (self.numerator*other.denominator)-(other.numerator*self.denominator)
+        dem = (self.denominator)*(other.denominator)
+        return fraction(num,dem)
+    
+    def __mul__(self,other):
+        num = self.numerator * self.numerator
+        dem = self.denominator * other.denominator
+        return fraction(num,dem)
+    
 
-b= bank()
-b.deposit(20000)
-b.withdraw(30000)
+f1 = fraction(1,2)
+f2 = fraction(3,4)
+
+f3=f1+f2
+print(f"{f3.numerator}/{f3.denominator}")
+f3=f1-f2
+print(f"{f3.numerator}/{f3.denominator}")
+f3=f1*f2
+print(f"{f3.numerator}/{f3.denominator}")
