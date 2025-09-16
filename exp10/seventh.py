@@ -1,0 +1,12 @@
+import numpy as np
+ar5=np.array([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[20,21,22,23,25]])
+print(ar5)
+print(ar5.sum(axis=1))
+print(sum(ar5))
+a5=np.random.randint(10,100)
+print(a5)
+np.random.seed(6)
+print(np.random.randint(10,100,10))
+print(np.random.rand(10))
+print(np.random.rand(4,4))
+print(np.random.rand(1,100,3))
