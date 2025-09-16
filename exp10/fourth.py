@@ -1,0 +1,15 @@
+#perform mathematical operations on an array
+from numpy import *
+arr=array([10,20,30,40,50])
+print(arr)
+print(arr+5)
+print(arr/5)
+print(arr*5)
+print(arr%5)
+print((arr+5)**2-10)
+print(sin(arr))
+print(cos(arr))
+print(tan(arr))
+print(max(arr))
+print(sum(arr))
+print(mean(arr))
